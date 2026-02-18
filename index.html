@@ -37,10 +37,47 @@ body {
     gap: 60px;
 }
 
-.hero-image img {
-    max-width: 420px;
-    width: 100%;
+.hero {
+    background: rgb(5, 13, 24);
+    position: relative;
+    padding: 100px 20px 180px; /* увеличили низ */
+    overflow: visible; /* важно */
 }
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-image {
+    position: absolute;
+    left: 0;
+    bottom: -320px; /* глубина захода в нижний блок */
+    z-index: 0;
+}
+
+.hero-image img {
+    max-width: 520px; /* чуть больше для эффекта */
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    margin-left: 550px; /* отступ чтобы текст не налезал */
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    background: #d6d0c7;
+    position: relative;
+    z-index: 1;
+    padding: 120px 20px 80px;
+}
+
+
 
 .hero-text h1 {
     font-size: 64px;
@@ -129,6 +166,22 @@ body {
     .hero-text p {
         font-size: 18px;
     }
+    @media (max-width: 992px) {
+
+    .hero-image {
+        position: relative;
+        bottom: 0;
+        text-align: center;
+        margin-bottom: -60px;
+    }
+
+    .hero-text {
+        margin-left: 0;
+        text-align: center;
+    }
+
+}
+
 }
 </style>
 </head>
@@ -180,7 +233,7 @@ body {
         <p>Переходите в телеграм и получите ваши материалы</p>
 
         <div class="btn-wrapper">
-            <a href="#" class="btn">ПОЛУЧИТЬ МАТЕРИАЛЫ В ТЕЛЕГРАМ</a>
+            <a href="https://t.me/martefactor_bot?start=w49791003" target="_blank" class="btn">ПОЛУЧИТЬ МАТЕРИАЛЫ В ТЕЛЕГРАМ</a>
         </div>
 
     </div>
