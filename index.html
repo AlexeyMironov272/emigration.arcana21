@@ -38,187 +38,195 @@ src="https://www.facebook.com/tr?id=889448123851459&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Tenor Sans', sans-serif;
-    line-height: 1.6;
-    color: #111;
-}
+        body {
+            font-family: 'Tenor Sans', sans-serif;
+            line-height: 1.6;
+            color: #111;
+            background: #d6d0c7;
+            /* Убираем горизонтальный скролл на уровне body */
+            overflow-x: hidden;
+        }
 
-/* HERO */
+        /* HERO */
+        .hero {
+            background: rgb(5, 13, 24);
+            position: relative;
+            padding: 100px 20px 180px;
+            overflow: visible;
+        }
 
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
+        .hero-image {
+            position: absolute;
+            left: 0;
+            bottom: -320px; 
+            z-index: 1;
+        }
 
-.hero {
-    background: rgb(5, 13, 24);
-    position: relative;
-    padding: 100px 20px 180px; /* увеличили низ */
-    overflow: visible; /* важно */
-}
+        .hero-image img {
+            max-width: 520px;
+            width: 100%;
+            display: block;
+        }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
+        .hero-text {
+            margin-left: 550px; 
+            color: #fff;
+            position: relative;
+            z-index: 3;
+        }
 
-.hero-image {
-    position: absolute;
-    left: 0;
-    bottom: -320px; /* глубина захода в нижний блок */
-    z-index: 0;
-}
+        .hero-text h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
 
-.hero-image img {
-    max-width: 520px; /* чуть больше для эффекта */
-    width: 100%;
-    display: block;
-}
+        /* Сдвиг только для десктопа */
+        .span-h1 {
+            display: block;
+            margin-left: -100px;
+            font-weight: 600;
+        }
 
-.hero-text {
-    margin-left: 550px; /* отступ чтобы текст не налезал */
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
+        .hero-text p {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: 400;
+            max-width: 500px;
+        }
 
-.span-h1 {
-    margin-left: -100px;
-}
-    
+        /* CONTENT */
+        .content {
+            background: #d6d0c7;
+            position: relative;
+            z-index: 1;
+            padding: 150px 20px 80px; /* Увеличен верхний паддинг для фото */
+        }
 
-.content {
-    background: #d6d0c7;
-    position: relative;
-    z-index: 1;
-    padding: 120px 20px 80px;
-}
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
+        .content h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
 
+        .content ul, .content ol {
+            margin-left: 20px;
+            margin-bottom: 40px;
+        }
 
-.hero-text h1 {
-    font-size: 64px;
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
+        .content li {
+            margin-bottom: 14px;
+            font-size: 1.1em;
+        }
 
-.hero-text h1 span {
-    display: block;
-    font-weight: 600;
-}
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-.hero-text p {
-    margin-top: 30px;
-    font-size: 22px;
-    font-weight: 400;
-    max-width: 500px;
-}
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border: 2px solid #000;
+            background: transparent;
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* CONTENT */
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
 
-.content {
-    background: #d6d0c7;
-    padding: 70px 20px;
-}
+        /* RESPONSIVE (Мобильная версия) */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 40px 15px 0px; /* Уменьшаем отступы */
+                overflow: hidden;
+            }
 
-.content-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
+            .hero-container {
+                flex-direction: column; /* Текст будет сверху */
+                text-align: center;
+                display: flex;
+            }
 
-.content h2 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
+            .hero-text {
+                margin-left: 0; /* Убираем левый отступ */
+                order: 1; /* Текст первый */
+                width: 100%;
+                padding: 0 10px;
+            }
 
-.content ul {
-    margin-left: 20px;
-    margin-bottom: 40px;
-}
+            .hero-text h1 {
+                font-size: 36px;
+                word-wrap: break-word;
+            }
 
-.content li {
-    margin-bottom: 14px;
-    font-size: 1em;
-    font-weight: 400;
-}
+            .span-h1 {
+                margin-left: 0; /* Убираем отрицательный маржин */
+            }
 
-.content p {
-    margin-bottom: 30px;
-}
+            .hero-text p {
+                font-size: 18px;
+                margin: 20px auto;
+            }
 
-.btn-wrapper {
-    text-align: center;
-}
+            .hero-image {
+                position: static; /* Вырываем из абсолютного позиционирования */
+                order: 2; /* Фото второе */
+                margin-top: 30px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
 
-.btn {
-    display: inline-block;
-    padding: 16px 40px;
-    border: 2px solid #000;
-    background: transparent;
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    transition: 0.3s;
-}
+            .hero-image img {
+                max-width: 100%;
+                height: auto;
+            }
 
-.btn:hover {
-    background: #000;
-    color: #fff;
-}
+            .content {
+                order: 3; /* Ожидание-реальность ниже всех */
+                padding: 40px 20px;
+            }
 
-/* RESPONSIVE */
-
-@media (max-width: 992px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .span-h1 {
-    margin-left: 0px;
-}
-
-    .hero-text h1 {
-        font-size: 42px;
-    }
-
-    .hero-text p {
-        font-size: 18px;
-    }
-    @media (max-width: 992px) {
-
-    .hero-image {
-        position: relative;
-        bottom: 0;
-        text-align: center;
-        margin-bottom: -60px;
-    }
-
-    .hero-text {
-        margin-left: 0;
-        text-align: center;
-    }
-
-}
-
-}
-</style>
+            .content h2 {
+                font-size: 20px;
+            }
+            
+            /* Убираем возможную горизонтальную прокрутку */
+            body, html {
+                overflow-x: hidden;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -226,21 +234,20 @@ body {
 <section class="hero">
     <div class="hero-container">
         
-        <div class="hero-image">
-            <!-- Вставьте своё изображение -->
-            <img src="images/mara-lavr.png" alt="Консультант" >
-        </div>
-
         <div class="hero-text">
             <h1>
-                <span class="span-h1">ОЖИДАНИЕ —</span>
-                РЕАЛЬНОСТЬ
+                <span class="span-h1">ЭМИГРАЦИЯ:</span>
+                ОЖИДАНИЕ — РЕАЛЬНОСТЬ
             </h1>
             <p>
                 Правда об эмиграции<br>
                 от Таро-мастера<br>
                 и эзотерического консультанта
             </p>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/mara-lavr.png" alt="Консультант">
         </div>
 
     </div>
@@ -265,7 +272,7 @@ body {
             <li>Пошаговый план возвращения к себе и выхода на другой уровень жизни</li>
         </ol>
 
-        <p>Переходите в телеграм и получите ваши материалы</p>
+        <p style="text-align: center;">Переходите в телеграм и получите ваши материалы</p>
 
         <div class="btn-wrapper">
             <a href="https://t.me/martefactor_bot?start=w49791003" target="_blank" class="btn">ПОЛУЧИТЬ МАТЕРИАЛЫ В ТЕЛЕГРАМ</a>
@@ -276,4 +283,5 @@ body {
 
 </body>
 </html>
+
 
